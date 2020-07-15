@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ItemCountModule } from '../item-count/item-count.module';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +16,9 @@ import { ItemCountModule } from '../item-count/item-count.module';
   imports: [
     CommonModule,
     MatToolbarModule,
-    ItemCountModule
+    ItemCountModule,
+    MatButtonModule,
+    RouterModule
   ]
 })
 export class LayoutModule { }

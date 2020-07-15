@@ -8,8 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { TickingButtonDirective } from './directives/ticking-button.directive';
 import { MatCardModule } from '@angular/material/card';
 
-
-
 @NgModule({
     declarations: [ ItemCountComponent, TickingButtonDirective ],
     exports: [

@@ -7,6 +7,8 @@ import { ItemsService } from '../../services/items/items.service';
   styleUrls: ['./item-count.component.scss']
 })
 export class ItemCountComponent {
+  public renderer: string;
+
   public get itemCount(): number {
     return this.items?.count;
   }
