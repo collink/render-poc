@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-content>
+    <button mat-mini-fab app-ticking-button (tick)="decrement()">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+
+    <span>{{ itemCount }}</span>
+
+    <button mat-mini-fab app-ticking-button (tick)="increment()">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </mat-card-content>
+
+  <mat-card-footer>
+    Press and hold to increase/decrease more quickly.
+  </mat-card-footer>
+</mat-card>
