@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemRendererComponent } from './item-renderer.component';
+import { PinkTirangleComponent } from './pink-tirangle.component';
 
-describe('ItemRendererComponent', () => {
-  let component: ItemRendererComponent;
-  let fixture: ComponentFixture<ItemRendererComponent>;
+describe('PinkTirangleComponent', () => {
+  let component: PinkTirangleComponent;
+  let fixture: ComponentFixture<PinkTirangleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemRendererComponent ]
+      declarations: [ PinkTirangleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemRendererComponent);
+    fixture = TestBed.createComponent(PinkTirangleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

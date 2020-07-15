@@ -17,7 +17,7 @@
     ],
     "paths": {
       "item-renderer": [
-        "projects/item-renderer/src/lib/public-api.ts"
+        "projects/item-renderer/src/public-api.ts"
       ]
     }
   }
