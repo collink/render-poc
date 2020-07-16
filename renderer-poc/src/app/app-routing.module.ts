@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { RedirectToRendererGuard } from './redirect-to-renderer.guard';
 import { SetRendererGuard } from './set-renderer.guard';
 

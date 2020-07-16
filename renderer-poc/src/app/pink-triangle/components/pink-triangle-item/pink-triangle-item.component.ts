@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pink-triangle-item',
-  template: '',
-  styleUrls: ['./pink-triangle-item.component.scss']
+  styleUrls: ['./pink-triangle-item.component.scss'],
+  template: '<i></i>',
 })
-export class PinkTriangleItemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class PinkTriangleItemComponent {
 }

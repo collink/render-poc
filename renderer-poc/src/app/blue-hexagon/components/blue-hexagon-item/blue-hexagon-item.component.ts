@@ -1,16 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-blue-hexagon-item',
   template: '<i></i>',
   styleUrls: ['./blue-hexagon-item.component.scss']
 })
-export class BlueHexagonItemComponent implements OnInit {
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+export class BlueHexagonItemComponent {
 }

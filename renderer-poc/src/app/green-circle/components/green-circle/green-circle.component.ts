@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ItemRendererService } from 'item-renderer';
 import { ItemsService } from '../../../item-count/services/items/items.service';
 import { GreenCircleFactory } from '../../services/green-circle-factory/green-circle-factory.service';
@@ -6,10 +6,12 @@ import { GreenCircleFactory } from '../../services/green-circle-factory/green-ci
 @Component({
   selector: 'app-green-circle',
   styleUrls: [ './green-circle.component.scss' ],
-  template: ''
+  template: '<ng-container #vcr></ng-container>'
 })
 export class GreenCircleComponent implements OnInit {
-  constructor(private items: ItemsService, @Inject('ItemRendererService') private itemRenderer: ItemRendererService<GreenCircleFactory>, private vcr: ViewContainerRef) {
+  @ViewChild('vcr', { read: ViewContainerRef }) private vcr: ViewContainerRef;
+
+  constructor(private items: ItemsService, @Inject('ItemRendererService') private itemRenderer: ItemRendererService<GreenCircleFactory>) {
   }
 
   ngOnInit(): void {

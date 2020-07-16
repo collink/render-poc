@@ -8,7 +8,7 @@ export class RedirectToRendererGuard implements CanActivate {
   public constructor(private router: Router) {
   }
 
-  public canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  public canActivate(): boolean {
     const renderer = localStorage.getItem('renderer') || 'blue-hexagon';
 
     this.router.navigate([ renderer ])

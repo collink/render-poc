@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Injectable, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, Injectable} from '@angular/core';
 import { ItemFactory } from 'item-renderer';
 import { BlueHexagonItemComponent } from '../../components/blue-hexagon-item/blue-hexagon-item.component';
 

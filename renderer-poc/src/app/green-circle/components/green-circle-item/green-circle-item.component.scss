@@ -1,0 +1,13 @@
+@import '~src/themes';
+
+$primary: map-get($green-theme, primary);
+$color: mat-color($primary);
+
+i {
+  font-size: 10px;
+  background-color: $color;
+  display: block;
+  border-radius: 5em;
+  height: 10em;
+  width: 10em;
+}

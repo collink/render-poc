@@ -6,7 +6,7 @@ import { ComponentFactory, ComponentFactoryResolver, Injectable, Type, ViewConta
 export abstract class ItemFactory<TItem> {
   protected _factory: ComponentFactory<TItem>;
 
-  constructor(factoryType: Type<TItem>, private componentFactoryResolver: ComponentFactoryResolver) {
+  protected constructor(factoryType: Type<TItem>, private componentFactoryResolver: ComponentFactoryResolver) {
     this._factory = this.componentFactoryResolver.resolveComponentFactory(factoryType);
   }
 

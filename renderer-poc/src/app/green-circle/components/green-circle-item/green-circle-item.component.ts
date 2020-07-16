@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-green-circle-item',
-  template: '',
-  styleUrls: ['./green-circle-item.component.scss']
+  styleUrls: ['./green-circle-item.component.scss'],
+  template: '<i></i>'
 })
-export class GreenCircleItemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class GreenCircleItemComponent {
 }

@@ -4,9 +4,13 @@ $primary: map-get($blue-theme, primary);
 $color: mat-color($primary);
 $triangle-height: 2.887em;
 
+:host {
+  position: relative;
+}
+
 i {
   font-size: 10px;
-  background-color: $color !important;
+  background-color: $color;
   display: block;
   height: 5.774em;
   width: 10em;
