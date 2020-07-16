@@ -1,0 +1,29 @@
+@import '~@angular/material/theming';
+
+$theme-accent: mat-palette($mat-gray, A200, A100, A400);
+
+$theme-warn: mat-palette($mat-red);
+
+$blue-theme: mat-dark-theme((
+  color: (
+    primary: mat-palette($mat-blue),
+    accent: $theme-accent,
+    warn: $theme-warn,
+  )
+));
+
+$green-theme: mat-dark-theme((
+  color: (
+    primary: mat-palette($mat-light-green),
+    accent: $theme-accent,
+    warn: $theme-accent
+  )
+));
+
+$pink-theme: mat-dark-theme((
+  color: (
+    primary: mat-palette($mat-pink),
+    accent: $theme-accent,
+    warn: $theme-accent
+  )
+));

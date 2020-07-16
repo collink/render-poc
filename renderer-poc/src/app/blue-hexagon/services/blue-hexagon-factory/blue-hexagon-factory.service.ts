@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
-import { IItemFactory } from 'item-renderer';
+import { ComponentFactoryResolver, Injectable, ViewContainerRef } from '@angular/core';
+import { ItemFactory } from 'item-renderer';
+import { BlueHexagonItemComponent } from '../../components/blue-hexagon-item/blue-hexagon-item.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlueHexagonFactory implements IItemFactory {
-  public createItem(): any {
-    console.log('create a blue hexagon');
+export class BlueHexagonFactory extends ItemFactory<BlueHexagonItemComponent> {
+  constructor(private cfr: ComponentFactoryResolver) {
+    super(BlueHexagonItemComponent, cfr);
   }
 }

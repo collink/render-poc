@@ -9,11 +9,14 @@ export class TickingButtonDirective {
   @Output() public tick = new EventEmitter<void>();
   @Input() public slowTicksPerSecond = 10;
   @Input() public slowTickDelay = 100;
-  @Input() public fastTicksPerSecond = 100;
-  @Input() public fastTickDelay = 2000;
+  @Input() public mediumTicksPerSecond = 50;
+  @Input() public mediumTickDelay = 1500;
+  @Input() public fastTicksPerSecond = 500;
+  @Input() public fastTickDelay = 3000;
 
   private _mouseUp$ = new Subject<void>();
   private _slowTickStart$ = new Subject<void>();
+  private _mediumTickStart$ = new Subject<void>();
   private _fastTickStart$ = new Subject<void>();
 
   @HostListener('mousedown')
@@ -31,6 +34,7 @@ export class TickingButtonDirective {
       });
 
     this.triggerSlowTick();
+    this.triggerMediumTick();
     this.triggerFastTick();
   }
 
@@ -49,12 +53,31 @@ export class TickingButtonDirective {
       )
       // if fast tick starts or mouseup fires, stop this interval immediately
       .pipe(
-        takeUntil(this._fastTickStart$),
+        takeUntil(this._mediumTickStart$),
         takeUntil(this._mouseUp$)
       )
       .subscribe(() => {
         // notify single click stream that slow tick has begun
         this._slowTickStart$.next();
+        this.tick.next();
+      });
+  }
+
+  private triggerMediumTick(): void {
+    // start an interval at the fast tick rate
+    interval(1000 / this.mediumTicksPerSecond)
+      // delay interval by fastTickDelay
+      .pipe(
+        delay(this.mediumTickDelay)
+      )
+      // if mouseup fires, stop this interval immediately
+      .pipe(
+        takeUntil(this._fastTickStart$),
+        takeUntil(this._mouseUp$)
+      )
+      .subscribe(() => {
+        // notify slow tick stream that fast tick has begun
+        this._mediumTickStart$.next();
         this.tick.next();
       });
   }

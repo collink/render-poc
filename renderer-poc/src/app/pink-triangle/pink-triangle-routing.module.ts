@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PinkTirangleComponent } from './components/pink-tirangle/pink-tirangle.component';
+import { PinkTriangleComponent } from './components/pink-triangle/pink-triangle.component';
 
 
 const routes: Routes = [
   {
     path: '**',
-    component: PinkTirangleComponent
+    component: PinkTriangleComponent
   }
 ];
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ItemsService } from '../../services/items/items.service';
 
 @Component({
@@ -6,14 +6,16 @@ import { ItemsService } from '../../services/items/items.service';
   templateUrl: './item-count.component.html',
   styleUrls: ['./item-count.component.scss']
 })
-export class ItemCountComponent {
+export class ItemCountComponent implements OnInit {
   public renderer: string;
-
-  public get itemCount(): number {
-    return this.items?.count;
-  }
+  public itemCount: number = 0;
 
   public constructor(private items: ItemsService) {
+  }
+
+  public ngOnInit(): void {
+    this.items.count$
+      .subscribe(c => this.itemCount = c);
   }
 
   public increment(): void {

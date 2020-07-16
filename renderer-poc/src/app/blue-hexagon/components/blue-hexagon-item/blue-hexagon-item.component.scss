@@ -1,0 +1,35 @@
+@import '~src/themes';
+
+$primary: map-get($blue-theme, primary);
+$color: mat-color($primary);
+$triangle-height: 2.887em;
+
+i {
+  font-size: 10px;
+  background-color: $color !important;
+  display: block;
+  height: 5.774em;
+  width: 10em;
+  position: relative;
+  margin: $triangle-height 0;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    border-left: 5em solid transparent;
+    border-right: 5em solid transparent;
+  }
+
+  &::before {
+    top: -$triangle-height;
+    border-bottom: $triangle-height solid $color;
+  }
+
+  &::after {
+    bottom: -$triangle-height;
+    border-top: $triangle-height solid $color
+  }
+}

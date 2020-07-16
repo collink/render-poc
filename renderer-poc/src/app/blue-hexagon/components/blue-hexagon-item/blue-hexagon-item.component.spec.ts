@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PinkTirangleComponent } from './pink-tirangle.component';
+import { BlueHexagonItemComponent } from './blue-hexagon-item.component';
 
-describe('PinkTirangleComponent', () => {
-  let component: PinkTirangleComponent;
-  let fixture: ComponentFixture<PinkTirangleComponent>;
+describe('BlueHexagonItemComponent', () => {
+  let component: BlueHexagonItemComponent;
+  let fixture: ComponentFixture<BlueHexagonItemComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PinkTirangleComponent ]
+      declarations: [ BlueHexagonItemComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PinkTirangleComponent);
+    fixture = TestBed.createComponent(BlueHexagonItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

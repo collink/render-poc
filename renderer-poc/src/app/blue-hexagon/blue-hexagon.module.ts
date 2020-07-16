@@ -5,18 +5,27 @@ import { BlueHexagonRoutingModule } from './blue-hexagon-routing.module';
 import { BlueHexagonComponent } from './components/blue-hexagon/blue-hexagon.component';
 import { ItemRendererService } from '../../../projects/item-renderer/src/lib/services/item-renderer/item-renderer.service';
 import { BlueHexagonFactory } from './services/blue-hexagon-factory/blue-hexagon-factory.service';
+import { BlueHexagonItemComponent } from './components/blue-hexagon-item/blue-hexagon-item.component';
 
 
 @NgModule({
   declarations: [
-    BlueHexagonComponent
+    BlueHexagonComponent,
+    BlueHexagonItemComponent
   ],
   imports: [
     CommonModule,
     BlueHexagonRoutingModule
   ],
+  bootstrap: [
+    BlueHexagonComponent
+  ],
   providers: [
-    { provide: 'ItemRendererService', useFactory: () => (new ItemRendererService(new BlueHexagonFactory())) }
+    {
+      provide: 'ItemRendererService',
+      useFactory: (factory: BlueHexagonFactory) => (new ItemRendererService(factory)),
+      deps: [ BlueHexagonFactory ]
+    }
   ]
 })
 export class BlueHexagonModule { }

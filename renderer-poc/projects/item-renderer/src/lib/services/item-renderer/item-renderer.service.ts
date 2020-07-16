@@ -1,15 +1,18 @@
-import { ElementRef, Injectable } from '@angular/core';
-import { IItemFactory } from '../../interfaces/item-factory.interface';
+import { ComponentFactoryResolver, Injectable, ViewContainerRef } from '@angular/core';
+import { ItemFactory } from '../../classes/item-factory.class';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ItemRendererService<TItemFactory extends IItemFactory> {
+export class ItemRendererService<TItemFactory extends ItemFactory<any>> {
   constructor(private factory: TItemFactory) {
   }
 
-  // public render(count: Number, host: ElementRef): void {
-  public render(): void {
-    this.factory.createItem()
+  public render(vcr: ViewContainerRef, count: number): void {
+    vcr.clear();
+
+    for (let i = 0; i < count; i++) {
+      this.factory.createItem(vcr);
+    }
   }
 }
